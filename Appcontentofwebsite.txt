@@ -1,0 +1,42 @@
+import { BrowserRouter, Routes, Route } from "react-router"
+import Home from "./home"
+import About from "./About"
+import Login from "./login"
+import NavBar from "./navbar"
+import Pagenotfound from "./pagenotfound"
+import CollegeDetail from "./collegedrop"
+import Studentdetail from "./studentdetail"
+import Department from "./department"
+import Usrelist from "./users"
+import Userdetail from "./userdetail"
+
+export default function App() {
+  return (
+    <div>
+      <h1 class="text-3xl font-bold underline">test tailwind css</h1>
+      <h2 className="bg-red-800 3xl border-yellow-600 border-8">tailwind css setup</h2>
+      <BrowserRouter>
+        <NavBar />
+
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/collegedrop" element={<CollegeDetail />}>
+            <Route path="studentdetail" element={<Studentdetail />} />
+            <Route path="department" element={<Department />} />
+
+
+          </Route>
+          <Route path="/users" element={<Usrelist />} />
+          <Route path="/users/:id?" element={<Userdetail />} />
+          <Route path="/*" element={<Pagenotfound />}></Route>
+
+        </Routes>
+
+
+
+      </BrowserRouter>
+    </div>
+  )
+}

@@ -1,0 +1,111 @@
+ import { useState } from "react";
+import Skills from "./skills";
+import User from "./user";
+import Clock from "./clock";
+
+function App() {
+  const [gender, setgender] = useState("male");
+  const [city, setcity] = useState("delhi");
+
+  const[color,setcolor]=useState("green");
+
+
+  // how to access arraydata in loop 
+  const userdata = [
+    {
+      name: "krishna",
+      age: 20,
+      rollno: 123,
+    },
+    {
+      name: "rahul",
+      age: 29,
+      rollno: 124,
+    },
+
+    {
+      name: "rakesh",
+      age: 24,
+      rollno: 125,
+    }
+  ]
+
+  return (
+     
+   
+
+
+    <div>
+       <h1>loop in jsx</h1>
+    <table border={"1"}>
+      <thead>
+        <tr>
+          <td>name</td>
+          <td>age</td>
+          <td>roll no.</td>
+          </tr>
+      </thead>
+      <tbody>
+        {
+          userdata.map((user)=>(
+            <tr>
+              
+              <td>{user.name}</td>
+              <td>{user.age}</td>
+              <td>{user.rollno}</td>
+            </tr>
+          ))
+        }
+        
+      </tbody>
+    </table>
+
+    <h2>reuse component in loop using map</h2>
+    {
+      userdata.map((user)=>(
+         <div key={user.rollno}>
+          <User data={user}/>
+         </div>
+      )
+    )
+    }
+
+
+
+
+
+      <h1>handle radio button </h1>
+      <h2>select gender</h2>
+
+      <input type="radio" value={"male"} onChange={(event) => setgender(event.target.value)} name="gender" checked={gender == "male"} id="male" />
+      <label htmlFor="male">male</label>
+      <br/>
+
+      <input type="radio" value={"female"} onChange={(event) => setgender(event.target.value)} name="gender" checked={gender == "female"} id="female" />
+      <label htmlFor="female">female</label>
+      <br/>
+      <h2>selectgender: {gender}</h2>
+      <Skills/>
+      
+      <select  id="" defaultValue={"delhi"} onChange={(event)=>setcity(event.target.value)}>
+        <option value="delhi">Delhi</option>
+        <option value=" gudgaon"> gungan</option>
+        <option value=" hariyana"> hariyana </option>
+        <option value="panjab">Delhi</option>
+
+      </select>
+      <h1>City: {city}</h1>
+
+  <h1>digital clock by prop</h1>
+      <select name="color" id="" onChange={(event)=>setcolor(event.target.value)}>
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+      </select>
+
+      <Clock color={color}/>
+
+    </div>
+  )
+}
+export default App;
