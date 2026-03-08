@@ -1,0 +1,31 @@
+import { NavLink, Route, Routes } from "react-router";
+import Userlist from "./user";
+import Useradd from "./useradd";
+import "./App.css";
+import Useredit from "./useredit";
+
+export default function App() {
+  return (
+    <div>
+      <h1> makes routes and pages for add user list app</h1>
+      <ul className="userlist">
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li><NavLink to="/add">Add user</NavLink></li>
+
+      </ul>
+
+
+
+      {/* <Userlist/> */}
+
+      <Routes>
+        <Route path="/" element={<Userlist />} />
+        <Route path="Add" element={<Useradd />} />
+        <Route path="/edit/:id" element={<Useredit/>} />
+
+      </Routes>
+    </div>
+  )
+}
