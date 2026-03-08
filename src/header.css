@@ -1,0 +1,38 @@
+ .header{
+background-color: rgb(215, 207, 197);
+display: flex;
+justify-content: space-between;
+ }    
+ body{
+    margin:0;
+    padding: 0;
+ }
+ .header ul{
+    display: flex;
+    list-style-type: none;
+    
+    margin :auto;
+    width: 350px;
+ }
+ .header ul li{
+    padding: 10px;
+ }
+ .link{
+    text-decoration: none;
+    
+
+
+ }
+.college .link{
+   text-decoration: none;
+    margin: 10px;
+ }
+ .active{
+   font-weight: 800;
+   color: red;
+ }
+ .custom-active{
+   font-weight: 900;
+   color: blue;
+ }
+ 

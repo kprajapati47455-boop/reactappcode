@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "kalyan singh",
+      "age": "65",
+      "Email": "kparajapti@gmail.com",
+      "id": "3"
+    },
+    {
+      "name": "rajesh kumar",
+      "age": "46",
+      "Email": "rahdghasdg@gmail.com",
+      "id": "3958"
+    },
+    {
+      "name": "ramnaresh",
+      "age": "76",
+      "Email": "ramkumar@gamail.com",
+      "id": "4335"
+    },
+    {
+      "id": "bb97",
+      "name": "ramu",
+      "age": "54",
+      "Email": "hddj@gmail.com"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,10 @@
+.heading{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.parent{
+    display: flex;
+}
