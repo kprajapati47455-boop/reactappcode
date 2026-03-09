@@ -1,0 +1,47 @@
+import { useState } from "react";
+
+function App() {
+  const [task, settask] = useState("");
+  const [todo, settodo] = useState([])
+
+  const todoapp = () => {
+    if (task == "") return;
+
+    const Newtodo = {
+      id: Date.now(),
+      text: task
+    }
+    settodo([...todo, Newtodo]);
+    settask("");
+  }
+  const deletetodo = (id) => {
+    settodo(todo.filter((todo) => todo.id !== id))
+  }
+
+
+
+  return (
+    <div>
+      <h1>my first todo App</h1>
+      <input type="text" value={task} onChange={(event) => settask(event.target.value)} placeholder="Enter task" />
+      <button onClick={todoapp}>Add</button>
+      {
+        todo.map((name) => (
+          <div key={name.id}>
+            <p >{name.text}</p>
+            <button onClick={()=>deletetodo(name.id)}>remove task</button>
+          </div>
+
+
+        ))
+      }
+
+    </div>
+
+  )
+
+
+
+}
+
+export default App;
